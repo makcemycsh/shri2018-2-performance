@@ -1,3 +1,4 @@
+@import url("../fonts/pt_sans.css");
 .adjust-bar {
   -webkit-appearance: none;
   appearance: none;
@@ -135,10 +136,6 @@
   padding-left: 40px;
   display: inline-block;
   margin-right: 11px;
-}
-#root {
-  position: absolute;
-  left: -10000px;
 }
 .devices {
   display: flex;
@@ -593,9 +590,6 @@ html {
 }
 .weather__item_cloud-drizzle {
   background: url("../assets/img/cloud-drizzle.webp") 100% 70%/26px no-repeat;
-}
-.stats {
-  opacity: 0;
 }
 .panel__icon {
   width: 24px;
