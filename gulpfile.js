@@ -103,15 +103,6 @@ gulp.task('docs:assets', () => {
 
   gulp.src('src/assets/img/**/*.svg')
   .pipe(imagemin())
-  // .pipe(svgSprite({
-  //   mode: {
-  //     css: {
-  //       render: {
-  //         css: true
-  //       }
-  //     }
-  //   }
-  // }))
   .pipe(gulp.dest('docs/assets/img/'));
 });
 
