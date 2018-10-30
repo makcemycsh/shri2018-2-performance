@@ -17,6 +17,8 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 //
 const imagemin = require('gulp-imagemin');
+const svgmin = require('gulp-svgmin');
+const webp = require('gulp-webp');
 const prettify = require('gulp-html-prettify');
 
 
@@ -84,7 +86,29 @@ gulp.task('docs:scripts', () => {
 gulp.task('docs:assets', () => {
   gulp.src('src/fonts/**/*.*').pipe(gulp.dest('docs/fonts/'));
 
-  gulp.src('src/assets/img/**/*.*').pipe(imagemin()).pipe(gulp.dest('docs/assets/img/'));
+  gulp.src('src/assets/img/**/*.svg')
+  .pipe(imagemin())
+  .pipe(svgmin())
+  .pipe(gulp.dest('docs/assets/img/'));
+
+  gulp.src('src/assets/img/**/*.png')
+  .pipe(imagemin())
+  .pipe(gulp.dest('docs/assets/img/'));
+
+
+  gulp.src('src/assets/img/**/*.png')
+  .pipe(imagemin())
+  .pipe(webp())
+  .pipe(gulp.dest('docs/assets/img/'));
+
+  gulp.src('src/assets/img/**/*.jpg')
+  .pipe(imagemin())
+  .pipe(gulp.dest('docs/assets/img/'));
+
+  gulp.src('src/assets/img/**/*.jpg')
+  .pipe(imagemin())
+  .pipe(webp())
+  .pipe(gulp.dest('docs/assets/img/'));
 });
 
 // 3. Вотчеры

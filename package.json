@@ -23,5 +23,9 @@
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
     "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "gulp-svgmin": "^2.1.0",
+    "gulp-webp": "^3.0.0"
   }
 }
