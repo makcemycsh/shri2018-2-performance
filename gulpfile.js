@@ -73,6 +73,7 @@ gulp.task('docs:styles', () => {
     cssnano({
       zindex: false,
       reduceIdents: false,
+      discardUnused: false,
     }),
   ])).pipe(gulp.dest('docs/styles/'));
 });
@@ -85,7 +86,9 @@ gulp.task('docs:scripts', () => {
 gulp.task('docs:assets', () => {
   gulp.src('src/fonts/**/*.*').pipe(gulp.dest('docs/fonts/'));
 
-  gulp.src('src/assets/img/**/*.*').pipe(imagemin()).pipe(gulp.dest('docs/assets/img/'));
+  gulp.src('src/assets/img/**/*.*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('docs/assets/img/'));
 });
 
 // 3. Вотчеры
@@ -123,14 +126,6 @@ gulp.task('watch:update', () => {
   watch('docs/styles/**/*.css', batch((e, end) => {
     gulp.start('server:inject', end);
   }));
-});
-
-// 3. Shell-задачи
-gulp.task('createBlock', () => {
-  gulp.src('').pipe(exec(`sh tasks/createBlock.sh ${options.name}`));
-});
-gulp.task('clearBuild', () => {
-  gulp.src('').pipe(exec('rm -rf docs/'));
 });
 
 gulp.task('default', ['watch:docs', 'watch:update']);
