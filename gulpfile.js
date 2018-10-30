@@ -90,10 +90,12 @@ gulp.task('docs:assets', () => {
   .pipe(gulp.dest('docs/assets/img/'));
 
   gulp.src('src/assets/img/**/*.jpg')
+  .pipe(imagemin())
   .pipe(webp())
   .pipe(gulp.dest('docs/assets/img/'));
 
   gulp.src('src/assets/img/**/*.png')
+  .pipe(imagemin())
   .pipe(webp())
   .pipe(gulp.dest('docs/assets/img/'));
 });
