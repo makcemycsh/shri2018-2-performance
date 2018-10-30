@@ -26,6 +26,7 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.1.0",
     "gulp-uncss": "^1.0.6",
     "gulp-webp": "^3.0.0"
