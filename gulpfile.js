@@ -70,7 +70,8 @@ gulp.task('docs:html', () => {
   })).pipe(gulp.dest('docs/'));
 });
 gulp.task('docs:styles', () => {
-  gulp.src('src/styles/*.css').pipe(plumber(handleError)).pipe(postcss([
+  gulp.src('src/styles/*.css').pipe(plumber(handleError))
+  .pipe(postcss([
     cssnano({
       zindex: false,
       reduceIdents: false,

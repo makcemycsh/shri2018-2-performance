@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "gulp-svgmin": "^2.1.0",
+    "gulp-uncss": "^1.0.6",
     "gulp-webp": "^3.0.0"
   }
 }
