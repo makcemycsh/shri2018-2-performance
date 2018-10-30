@@ -5,6 +5,7 @@ const plumber = require('gulp-plumber'); // Обработка ошибок
 const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 const minimist = require('minimist'); // Работа с аргументами команд
+
 //
 
 const postcss = require('gulp-postcss');
@@ -18,6 +19,7 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const prettify = require('gulp-html-prettify');
+const svgSprite = require('gulp-svg-sprite');
 
 
 // Обработка ошибок
@@ -85,9 +87,9 @@ gulp.task('docs:scripts', () => {
 gulp.task('docs:assets', () => {
   gulp.src('src/fonts/**/*.*').pipe(gulp.dest('docs/fonts/'));
 
-  gulp.src('src/assets/img/**/*.*')
-  .pipe(imagemin())
-  .pipe(gulp.dest('docs/assets/img/'));
+  // gulp.src('src/assets/img/**/*.*')
+  // .pipe(imagemin())
+  // .pipe(gulp.dest('docs/assets/img/'));
 
   gulp.src('src/assets/img/**/*.jpg')
   .pipe(imagemin())
@@ -97,6 +99,19 @@ gulp.task('docs:assets', () => {
   gulp.src('src/assets/img/**/*.png')
   .pipe(imagemin())
   .pipe(webp({quality: 60, method:6}))
+  .pipe(gulp.dest('docs/assets/img/'));
+
+  gulp.src('src/assets/img/**/*.svg')
+  .pipe(imagemin())
+  // .pipe(svgSprite({
+  //   mode: {
+  //     css: {
+  //       render: {
+  //         css: true
+  //       }
+  //     }
+  //   }
+  // }))
   .pipe(gulp.dest('docs/assets/img/'));
 });
 
