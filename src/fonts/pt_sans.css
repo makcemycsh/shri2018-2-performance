@@ -1,26 +1,17 @@
 @font-face {
 	font-family: 'PT Sans';
-	src: url('PTS55F_W.eot');
-	src: local('PT Sans'), url('PTS55F_W.woff') format('woff');
+	src: url('PTS55F_W.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'PT Sans';
 	font-style: normal;
 	font-weight: bold;
-	src: url('PTS75F_W.eot');
-	src: local('PT Sans Bold'), url('PTS75F_W.woff') format('woff');
-}
-
-@font-face {
-	font-family: 'PT Sans Narrow';
-	src: url('PTN57F_W.eot');
-	src: local('PT Sans Narrow'), url('PTN57F_W.woff') format('woff');
+	src: url('PTS75F_W.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'PT Sans Narrow';
 	font-weight: bold;
-	src: url('PTN77F_W.eot');
-	src: local('PT Sans Narrow Bold'), url('PTN77F_W.woff') format('woff');
+	src: url('PTN77F_W.woff') format('woff');
 }
