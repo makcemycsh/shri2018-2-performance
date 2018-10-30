@@ -69,14 +69,14 @@
   left: 14px;
   width: 30px;
   height: 30px;
-  background: url("../assets/adjust-bar_light_from.svg") center center/contain no-repeat;
+  background: url("../assets/img/adjust-bar_light_from.svg") center center/contain no-repeat;
 }
 .adjust-bar__container_theme_light::after {
   top: 13px;
   right: 13px;
   width: 34px;
   height: 34px;
-  background: url("../assets/adjust-bar_light_to.svg") center center/contain no-repeat;
+  background: url("../assets/img/adjust-bar_light_to.svg") center center/contain no-repeat;
 }
 .adjust-bar_theme_temp {
   background-image: linear-gradient(90deg, #068fff 0%, #ffd800 50%, #f76b1c 100%);
@@ -303,7 +303,7 @@
   width: 108px;
   height: 27px;
   position: relative;
-  background-image: url("../assets/logo.png");
+  background-image: url("../assets/img/logo.png");
   background-repeat: no-repeat;
   background-position: left top;
   background-size: cover;
@@ -334,7 +334,7 @@
   padding: 0 20px 0 25px;
   display: flex;
   justify-content: space-between;
-  background: url("../assets/sh.png") center center/cover no-repeat;
+  background: url("../assets/img/sh.png") center center/cover no-repeat;
 }
 .main__greeting {
   margin-top: 6px;
@@ -423,12 +423,12 @@
   padding-right: 32px;
 }
 .modal__value_temp {
-  background: url("../assets/panel__icon_temp_on.svg") calc(100% + 10px) 0%/contain no-repeat;
+  background: url("../assets/img/panel__icon_temp_on.svg") calc(100% + 10px) 0%/contain no-repeat;
 }
 .modal__value_light {
   height: 45px;
   padding-right: 45px;
-  background: url("../assets/panel__icon_light_off.svg") right center/contain no-repeat;
+  background: url("../assets/img/panel__icon_light_off.svg") right center/contain no-repeat;
 }
 .modal__status {
   margin-bottom: 20px;
@@ -592,7 +592,7 @@ html {
   padding-right: 31px;
 }
 .weather__item_cloud-drizzle {
-  background: url("../assets/cloud-drizzle.png") 100% 70%/26px no-repeat;
+  background: url("../assets/img/cloud-drizzle.png") 100% 70%/26px no-repeat;
 }
 .stats {
   opacity: 0;
@@ -602,17 +602,17 @@ html {
   height: 24px;
 }
 .panel__icon_temp_off {
-  background: url("../assets/panel__icon_temp_off.svg") center center/contain no-repeat;
+  background: url("../assets/img/panel__icon_temp_off.svg") center center/contain no-repeat;
 }
 .panel__icon_temp_on {
-  background: url("../assets/panel__icon_temp_on.svg") center center/contain no-repeat;
+  background: url("../assets/img/panel__icon_temp_on.svg") center center/contain no-repeat;
 }
 .panel__icon_light_off {
-  background: url("../assets/panel__icon_light_off.svg") center center/contain no-repeat;
+  background: url("../assets/img/panel__icon_light_off.svg") center center/contain no-repeat;
 }
 .panel__icon_light_on {
-  background: url("../assets/panel__icon_light_on.svg") center center/contain no-repeat;
+  background: url("../assets/img/panel__icon_light_on.svg") center center/contain no-repeat;
 }
 .panel__icon_clock {
-  background: url("../assets/panel__icon_clock.svg") center center/contain no-repeat;
+  background: url("../assets/img/panel__icon_clock.svg") center center/contain no-repeat;
 }
