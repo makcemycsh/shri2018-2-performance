@@ -4,7 +4,6 @@ const batch = require('gulp-batch'); // Пачки задач
 const plumber = require('gulp-plumber'); // Обработка ошибок
 const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
-const exec = require('gulp-exec'); // Выполнение команд
 const minimist = require('minimist'); // Работа с аргументами команд
 //
 
@@ -17,6 +16,7 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 //
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 const prettify = require('gulp-html-prettify');
 
 
@@ -68,8 +68,7 @@ gulp.task('docs:html', () => {
   })).pipe(gulp.dest('docs/'));
 });
 gulp.task('docs:styles', () => {
-  gulp.src('src/styles/*.css').pipe(plumber(handleError))
-  .pipe(postcss([
+  gulp.src('src/styles/*.css').pipe(plumber(handleError)).pipe(postcss([
     cssnano({
       zindex: false,
       reduceIdents: false,
@@ -88,6 +87,14 @@ gulp.task('docs:assets', () => {
 
   gulp.src('src/assets/img/**/*.*')
   .pipe(imagemin())
+  .pipe(gulp.dest('docs/assets/img/'));
+
+  gulp.src('src/assets/img/**/*.jpg')
+  .pipe(webp())
+  .pipe(gulp.dest('docs/assets/img/'));
+
+  gulp.src('src/assets/img/**/*.png')
+  .pipe(webp())
   .pipe(gulp.dest('docs/assets/img/'));
 });
 
