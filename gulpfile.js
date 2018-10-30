@@ -5,12 +5,14 @@ const plumber = require('gulp-plumber'); // Обработка ошибок
 const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 const minimist = require('minimist'); // Работа с аргументами команд
+const htmlmin = require('gulp-htmlmin');
 //
 
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const sourcemaps = require('gulp-sourcemaps');
+const uncss = require('gulp-uncss');
 //
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
@@ -58,14 +60,9 @@ gulp.task('server:inject', () => {
 gulp.task('docs:html', () => {
   gulp.src([
     'src/pages/*.html',
-  ]).pipe(prettify({
-    indent_char: ' ',
-    indent_size: 2,
-    preserve_newlines: true,
-    max_preserve_newlines: 1,
-    end_with_newline: true,
-    wrap_line_length: 80,
-  })).pipe(gulp.dest('docs/'));
+  ])
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(gulp.dest('docs/'));
 });
 gulp.task('docs:styles', () => {
   gulp.src('src/styles/*.css').pipe(plumber(handleError)).pipe(postcss([
@@ -85,17 +82,11 @@ gulp.task('docs:scripts', () => {
 gulp.task('docs:assets', () => {
   gulp.src('src/fonts/**/*.*').pipe(gulp.dest('docs/fonts/'));
 
-  gulp.src('src/assets/img/**/*.*')
-  .pipe(imagemin())
-  .pipe(gulp.dest('docs/assets/img/'));
+  gulp.src('src/assets/img/**/*.*').pipe(imagemin()).pipe(gulp.dest('docs/assets/img/'));
 
-  gulp.src('src/assets/img/**/*.jpg')
-  .pipe(webp())
-  .pipe(gulp.dest('docs/assets/img/'));
+  gulp.src('src/assets/img/**/*.jpg').pipe(webp()).pipe(gulp.dest('docs/assets/img/'));
 
-  gulp.src('src/assets/img/**/*.png')
-  .pipe(webp())
-  .pipe(gulp.dest('docs/assets/img/'));
+  gulp.src('src/assets/img/**/*.png').pipe(webp()).pipe(gulp.dest('docs/assets/img/'));
 });
 
 // 3. Вотчеры
