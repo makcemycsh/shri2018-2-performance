@@ -5,7 +5,6 @@ const plumber = require('gulp-plumber'); // Обработка ошибок
 const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
 const minimist = require('minimist'); // Работа с аргументами команд
-const htmlmin = require('gulp-htmlmin');
 //
 
 const postcss = require('gulp-postcss');
@@ -61,7 +60,6 @@ gulp.task('docs:html', () => {
   gulp.src([
     'src/pages/*.html',
   ])
-  .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(gulp.dest('docs/'));
 });
 gulp.task('docs:styles', () => {
