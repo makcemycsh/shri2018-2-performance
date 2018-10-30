@@ -91,12 +91,12 @@ gulp.task('docs:assets', () => {
 
   gulp.src('src/assets/img/**/*.jpg')
   .pipe(imagemin())
-  .pipe(webp())
+  .pipe(webp({quality: 60, method:6}))
   .pipe(gulp.dest('docs/assets/img/'));
 
   gulp.src('src/assets/img/**/*.png')
   .pipe(imagemin())
-  .pipe(webp())
+  .pipe(webp({quality: 60, method:6}))
   .pipe(gulp.dest('docs/assets/img/'));
 });
 
