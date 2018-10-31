@@ -91,19 +91,19 @@ gulp.task('docs:assets', () => {
   // .pipe(imagemin())
   // .pipe(gulp.dest('docs/assets/img/'));
 
-  gulp.src('src/assets/img/**/*.jpg')
-  .pipe(imagemin())
-  .pipe(webp({quality: 50, method:6}))
-  .pipe(gulp.dest('docs/assets/img/'));
-
-  gulp.src('src/assets/img/**/*.png')
-  .pipe(imagemin())
-  .pipe(webp({quality: 50, method:6}))
-  .pipe(gulp.dest('docs/assets/img/'));
-
-  gulp.src('src/assets/img/**/*.svg')
-  .pipe(imagemin())
-  .pipe(gulp.dest('docs/assets/img/'));
+  // gulp.src('src/assets/img/**/*.jpg')
+  // .pipe(imagemin())
+  // .pipe(webp({quality: 50, method:6}))
+  // .pipe(gulp.dest('docs/assets/img/'));
+  //
+  // gulp.src('src/assets/img/**/*.png')
+  // .pipe(imagemin())
+  // .pipe(webp({quality: 50, method:6}))
+  // .pipe(gulp.dest('docs/assets/img/'));
+  //
+  // gulp.src('src/assets/img/**/*.svg')
+  // .pipe(imagemin())
+  // .pipe(gulp.dest('docs/assets/img/'));
 });
 
 // 3. Вотчеры
