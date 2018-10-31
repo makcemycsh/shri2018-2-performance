@@ -96,10 +96,10 @@ gulp.task('docs:assets', () => {
   // .pipe(webp({quality: 50, method:6}))
   // .pipe(gulp.dest('docs/assets/img/'));
   //
-  gulp.src('src/assets/img/**/*.png')
-  .pipe(imagemin())
-  .pipe(webp({quality: 50, method:6}))
-  .pipe(gulp.dest('docs/assets/img/'));
+  // gulp.src('src/assets/img/**/*.png')
+  // .pipe(imagemin())
+  // .pipe(webp({quality: 50, method:6}))
+  // .pipe(gulp.dest('docs/assets/img/'));
   //
   // gulp.src('src/assets/img/**/*.svg')
   // .pipe(imagemin())
